@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akspoc-515a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akspoc-515a"
+  template:
+    metadata:
+      labels:
+        app: "akspoc-515a"
+    spec:
+      containers:
+        - name: "akspoc-515a"
+          image: "azsdevpoc.azurecr.io/akspoc"
+          ports:
+          - containerPort: 8080
